@@ -2,7 +2,7 @@
 
 ## Installation
 
-You can download or clone this repo and build it in VS
+You can download or clone this repo and build it in VS;
 If you are using windows, use g++ TrueConf_test.cpp in command prompt to compile (this is a "single file app"),
 then run the executable.
 
