@@ -1,0 +1,4 @@
+﻿  TrueConf_Test.cpp
+E:\Projects\TrueConf_Test\TrueConf_Test.cpp(111,22): warning C4018:  '<': signed/unsigned mismatch
+E:\Projects\TrueConf_Test\TrueConf_Test.cpp(130,21): warning C4018:  '<': signed/unsigned mismatch
+  TrueConf_Test.vcxproj -> E:\Projects\TrueConf_Test\Debug\TrueConf_Test.exe
