@@ -151,7 +151,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Array.cpp" />
+    <ClCompile Include="Container.cpp" />
+    <ClCompile Include="Interface.cpp" />
+    <ClCompile Include="MapWrapper.cpp" />
+    <ClCompile Include="Synchronize.cpp" />
     <ClCompile Include="TrueConf_Test.cpp" />
+    <ClCompile Include="VectorWrapper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Array.h" />
+    <ClInclude Include="Container.h" />
+    <ClInclude Include="Globals.h" />
+    <ClInclude Include="Interface.h" />
+    <ClInclude Include="MapWrapper.h" />
+    <ClInclude Include="Synchronize.h" />
+    <ClInclude Include="VectorWrapper.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
