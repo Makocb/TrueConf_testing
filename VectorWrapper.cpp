@@ -1,15 +1,7 @@
 #include "VectorWrapper.h"
 #include "Globals.h"
 
-auto VectorWrapper::itStart() 
-{
-	return this->orgnVector.begin();
-}
 
-auto VectorWrapper::itEnd() 
-{
-	return this->orgnVector.end();
-}
 
 void VectorWrapper::contentSize(int& size)
 {

@@ -23,9 +23,9 @@ private:
 	//Vector itself (originVector)
 	std::vector<int> orgnVector;
 public:
-	auto itStart();
+	~VectorWrapper() {};
 
-	auto itEnd();
+
 
 	void WrapperConstructor(const int& length) override;
 

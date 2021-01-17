@@ -21,6 +21,7 @@ private:
 	//Map itself (originMap)
 	std::map<int, int> orgnMap;
 public:
+	~MapWrapper() {};
 
 	//Default constructor
 	void WrapperConstructor(const int& length) override;

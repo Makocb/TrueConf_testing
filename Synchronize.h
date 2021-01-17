@@ -21,6 +21,12 @@ public:
 		content2 = inpContent2;
 	}
 
+	~Synchronize() 
+	{
+		content1.reset();
+		content2.reset();
+	}
+
 	//Sinchronizes Vectorand Map values
 	void sinchronize()
 	{
@@ -84,6 +90,8 @@ public:
 				content2->erase(i,false);
 			}
 		}
+
 	}
+
 };
 

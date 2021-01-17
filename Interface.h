@@ -18,6 +18,8 @@ class Interface: public Array
 private:
 	std::shared_ptr<T> content;
 public:
+	~Interface() { content.reset(); };
+
 	//Default constructor
 	Interface(std::shared_ptr<T> inner, const int& len = localConstants::defaultSize)
 	{

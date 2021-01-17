@@ -4,8 +4,8 @@
 
 class Array
 {
-private:
-	//virtual ~Array() {};
+protected:
+	virtual ~Array() {};
 public: 
 
 	//Default constructor
