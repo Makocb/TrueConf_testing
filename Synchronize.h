@@ -8,14 +8,16 @@
 
 #include "Container.h"
 
-template<class T, class S>
+template<typename T>
+using ptr = std::shared_ptr<T>;
+
 class Synchronize
 {
 private:
-	std::shared_ptr<T> content1;
-	std::shared_ptr<S> content2;
+	ptr<Container> content1;
+	ptr<Container> content2;
 public:
-	Synchronize(std::shared_ptr<T> inpContent1, std::shared_ptr<S> inpContent2)
+	Synchronize(ptr<Container> inpContent1, ptr<Container> inpContent2)
 	{
 		content1 = inpContent1;
 		content2 = inpContent2;

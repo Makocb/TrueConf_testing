@@ -10,18 +10,18 @@
 
 #include "Container.h"
 
-//template <class T>
-//using ptr = std::shared_ptr<T>;
 template <class T>
+using ptr = std::shared_ptr<T>;
+
 class Interface: public Array
 {
 private:
-	std::shared_ptr<T> content;
+	ptr<Container> content;
 public:
 	~Interface() { content.reset(); };
 
 	//Default constructor
-	Interface(std::shared_ptr<T> inner, const int& len = localConstants::defaultSize)
+	Interface(ptr<Container> inner, const int& len = localConstants::defaultSize)
 	{
 		content = inner;
 		content->WrapperConstructor(len);
