@@ -23,38 +23,34 @@ template <typename T, typename S>
 class Synchronize
 {
 private:
-	ptr<Container> content1;
-	ptr<Container> content2;
+	ptr<Interface<T>> content1;
+	ptr<Interface<S>> content2;
 public:
 	Synchronize()
 	{
 
 		srand((unsigned int)time(NULL));
 
-		T* wrap1 = new T();
-		S* wrap2 = new S();
+		Interface<T>* contentPrototype1 = new Interface<T>();
+		Interface<S>* contentPrototype2 = new Interface<S>();
 
-		content1 = std::make_shared<T>(*wrap1);
-		content2 = std::make_shared<S>(*wrap2);
+		content1 = std::make_shared<Interface<T>>(*contentPrototype1);
+		content2 = std::make_shared<Interface<S>>(*contentPrototype2);
 
-		Interface* interf1 = new Interface(content1);
-		Interface* interf2 = new Interface(content2);
+		delete contentPrototype1;
+		delete contentPrototype2;
+	}
 
-		interf1->calculate();
-		interf1->output();
-		interf2->calculate();
-		interf2->output();
+	void print()
+	{
+		content1->output();
+		content2->output();
+	}
 
-		sinchronize();
-
-		delete wrap1;
-		delete wrap2;
-
-		interf1->output();
-		interf2->output();
-		
-		delete interf1;
-		delete interf2;
+	void calculateBeforeSync()
+	{
+		content1->calculate();
+		content2->calculate();
 	}
 
 	Synchronize(ptr<Container> inpContent1, ptr<Container> inpContent2)
@@ -72,8 +68,8 @@ public:
 	//Sinchronizes Vectorand Map values
 	void sinchronize()
 	{
-		int size1;
-		int size2;
+		int size1=0;
+		int size2=0;
 		content1->contentSize(size1);
 		content2->contentSize(size2);
 		//Vector, which contains the table of keys from inpMap,

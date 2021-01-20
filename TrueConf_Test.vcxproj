@@ -152,7 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MapWrapper.cpp" />
-    <ClCompile Include="TrueConf_Test.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="VectorWrapper.cpp" />
   </ItemGroup>
   <ItemGroup>

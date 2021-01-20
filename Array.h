@@ -22,6 +22,12 @@ public:
 
 	virtual void output() = 0;
 
+	virtual void erase(const int& length, bool flag = true) = 0;
 
+	virtual void contentSize(int& size) = 0;
+
+	virtual void valueCount(int& count, int& value) = 0;
+
+	virtual void getKey(const int& pos, int& rtrn) = 0;
 };
 
