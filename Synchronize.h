@@ -8,15 +8,55 @@
 
 #include "Container.h"
 
+#include "VectorWrapper.h"
+
+#include "MapWrapper.h"
+
+#include "Interface.h"
+
+#include <ctime>
+
 template<typename T>
 using ptr = std::shared_ptr<T>;
 
+template <typename T, typename S>
 class Synchronize
 {
 private:
 	ptr<Container> content1;
 	ptr<Container> content2;
 public:
+	Synchronize()
+	{
+
+		srand((unsigned int)time(NULL));
+
+		T* wrap1 = new T();
+		S* wrap2 = new S();
+
+		content1 = std::make_shared<T>(*wrap1);
+		content2 = std::make_shared<S>(*wrap2);
+
+		Interface* interf1 = new Interface(content1);
+		Interface* interf2 = new Interface(content2);
+
+		interf1->calculate();
+		interf1->output();
+		interf2->calculate();
+		interf2->output();
+
+		sinchronize();
+
+		delete wrap1;
+		delete wrap2;
+
+		interf1->output();
+		interf2->output();
+		
+		delete interf1;
+		delete interf2;
+	}
+
 	Synchronize(ptr<Container> inpContent1, ptr<Container> inpContent2)
 	{
 		content1 = inpContent1;
@@ -70,7 +110,6 @@ public:
 				content1->erase(it,false);
 				it--;
 				size1--;
-				//content1->output();
 
 			}
 		}
